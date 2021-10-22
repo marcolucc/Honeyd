@@ -8,6 +8,9 @@ import sys
 import regress
 import time
 import re
+#to download from my repo
+import requests
+from os import getcwd
 
 def get_ipaddr(count):
     octet1 = count % 254
@@ -87,6 +90,14 @@ add template tcp port 23 open
 
     output.close()
     input.close()
+    
+    url = "https://raw.githubusercontent.com/"
+    directory = getcwd()
+    r = requests.get(url)
+
+    with open("nmap-os-db", "a") as file_object:
+        file_object.write(r.content)
+
 
     return count
 
