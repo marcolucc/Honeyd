@@ -91,7 +91,7 @@ add template tcp port 23 open
     output.close()
     input.close()
     
-    url = "https://raw.githubusercontent.com/"
+    url = "https://raw.githubusercontent.com/marcolucc/Honeyd/master/ext/extend"
     directory = getcwd()
     r = requests.get(url)
 
